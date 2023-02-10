@@ -1,0 +1,16 @@
+img {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+img:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+body{
+    background-image:url('./includes/eq2.jpg');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
