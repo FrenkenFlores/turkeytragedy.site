@@ -23,6 +23,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="./list.php">List</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="./contacts.php">Contact us</a>
+                </li>
                 <li class="nav-item dropdown ms-auto">
                     <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Language</a>
                     <ul class="dropdown-menu">
@@ -42,7 +45,7 @@
                             If you have lost the contact with a relative or a 
                             friend that lived nearby the earthquake location
                             or if you have found one of the earthquake victims, 
-                            fill free to leave your report.</small>
+                            feel free to leave your report.</small>
                         </p>
                         <a href="./reportform.php" class="btn btn-dark">Make a report</a>
                     </div>

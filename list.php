@@ -45,6 +45,9 @@ if (isset($_POST["submit"])) {
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="./list.php">List</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="./contacts.php">Contact us</a>
+                </li>
                 <li class="nav-item dropdown ms-auto">
                     <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Language</a>
                     <ul class="dropdown-menu">
