@@ -6,7 +6,7 @@ if (isset($_POST["submit"])) {
     $result = mysqli_query($conn, $sql);
     if ($result) {
         $row = mysqli_fetch_assoc($result);
-        header("Location: search.php?id=$row[id]");
+        header("Location: search_ru.php?id=$row[id]");
     } else {
         header("Location: index.php?msg=Error occured, try later");
     }
@@ -33,53 +33,52 @@ if (isset($_POST["submit"])) {
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>';
         }?>
-            <ul class="nav nav-pills bg-white" style="padding: 10px; border-radius: 4px; border-color: BFBFBF; border-width: 1px; border-style:solid;">
-                <a class="navbar-brand" href="./index.php">
+            <ul class="nav nav-pills bg-white" style="padding: 10px; border-radius: 4px; border-color: BFBFBF; border-width: 1px; border-style:solid; ">
+                <a class="navbar-brand" href="./index_ru.php">
                     <img src="https://www.countryflagicons.com/FLAT/32/TR.png" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
                     <img src="https://www.countryflagicons.com/FLAT/32/SY.png" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
                 </a>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" aria-current="page" href="./reportform.php">Report</a>
+                    <a class="nav-link text-dark" aria-current="page" href="./reportform_ru.php">Добавить информацию</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="./list.php">List</a>
+                    <a class="nav-link text-dark" href="./list_ru.php">Список</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="./contacts.php">Contact us</a>
+                    <a class="nav-link text-dark" href="./contacts_ru.php">Наши контакты</a>
                 </li>
                 <li class="nav-item dropdown ms-auto">
-                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Language</a>
+                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Язык</a>
                     <ul class="dropdown-menu">
-                    <li><a id="en" class="dropdown-item" href="#">English</a></li>
-                    <li><a id="tr" class="dropdown-item" href="#">Türkçe</a></li>
-                    <li><a id="ae" class="dropdown-item" href="#">العربيه</a></li>
-                    <li><a id="ru" class="dropdown-item" href="#">Русский</a></li>
+                    <li><a id="en" class="dropdown-item" href="./list.php">English</a></li>
+                    <li><a id="tr" class="dropdown-item" href="./list_tr.php">Türkçe</a></li>
+                    <li><a id="ae" class="dropdown-item" href="./list_ar.php">العربيه</a></li>
+                    <li><a id="ru" class="dropdown-item" href="./list_ru.php">Русский</a></li>
                     </ul>
                 </li>
             </ul>
             <div class="card bg-white"  style="overflow: auto;">
                 <form style="padding: 5px;" class="d-flex" role="search" action="" method="post">
-                    <input style="padding: 10px;" class="form-control me-2" name="fullname" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit" name="submit">Search</button>
+                    <input style="padding: 10px;" class="form-control me-2" name="fullname" type="search" placeholder="имя" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" name="submit">Поиск</button>
                 </form>
                 <table class="table table-responsive table-bordered table-hover text-center">
                     <thead>
                         <tr>
                             <th scope="col">id</th>
-                            <th scope="col">full name</th>
-                            <th scope="col">status</th>
-                            <th scope="col">contacts</th>
-                            <th scope="col">location</th>
-                            <th scope="col">comments</th>
-                            <th scope="col">last update</th>
-                            <th scope="col">update</th>
+                            <th scope="col">имя</th>
+                            <th scope="col">статус</th>
+                            <th scope="col">контакты</th>
+                            <th scope="col">местоположение</th>
+                            <th scope="col">комментарий</th>
+                            <th scope="col">последнее обновление</th>
+                            <th scope="col">обновить</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                             include "./db_connection.php";
-                            $id = $_GET["id"];
-                            $sql = "SELECT * FROM `lost_people_table` WHERE id = '$id'";
+                            $sql = "SELECT * FROM `lost_people_table`";
                             $request = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_assoc($request)) {
                         ?>
@@ -92,9 +91,9 @@ if (isset($_POST["submit"])) {
                                 <td scope="row"><?php echo $row["comment"];?></td>
                                 <td scope="row"><?php echo $row["date"];?></td>
                                 <td scope="row">
-                                    <a href="edit.php?id=<?php echo $row["id"];?>"
+                                    <a href="edit_ru.php?id=<?php echo $row["id"];?>"
                                     class="link-dark"><img src="./includes/icons8-edit-24.png"></a>
-                                    <a href="delete.php?id=<?php echo $row["id"];?>"
+                                    <a href="delete_ru.php?id=<?php echo $row["id"];?>"
                                     class="link-dark"><img src="./includes/icons8-remove-24.png"></a>
                                 </td>
                             </tr>

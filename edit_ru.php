@@ -12,9 +12,9 @@ if (isset($_POST["submit"])) {
     $sql = "UPDATE `lost_people_table` SET `name`='$fullname',`status`='$status',`contacts`='$contacts',`location`='$location',`comment`='$comment',`date`='$date' WHERE id = $id";
     $result = mysqli_query($conn, $sql);
     if ($result) {
-        header("Location: list.php?msg=Your report has been updated successfully");
+        header("Location: list_ru.php?msg=Ваш отчет был успешно обновлен");
     } else {
-        header("Location: list.php?msg=Error occured, try later");
+        header("Location: list_ru.php?msg=Произошла ошибка, попробуйте позже");
     }
 }
 ?>
@@ -35,21 +35,21 @@ if (isset($_POST["submit"])) {
         <div class="container">
             <!-- Navigation -->
             <ul class="nav nav-pills bg-white" style="padding: 10px; border-radius: 4px; border-color: BFBFBF; border-width: 1px; border-style:solid; ">
-                <a class="navbar-brand" href="./index.php">
+                <a class="navbar-brand" href="./index_ru.php">
                     <img src="https://www.countryflagicons.com/FLAT/32/TR.png" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
                     <img src="https://www.countryflagicons.com/FLAT/32/SY.png" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
                 </a>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" aria-current="page" href="./reportform.php">Report</a>
+                    <a class="nav-link text-dark" aria-current="page" href="./reportform_ru.php">Добавить информацию</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="./list.php">List</a>
+                    <a class="nav-link text-dark" href="./list_ru.php">Список</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="./contacts.php">Contact us</a>
+                    <a class="nav-link text-dark" href="./contacts_ru.php">Наши контакты</a>
                 </li>
                 <li class="nav-item dropdown ms-auto">
-                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Language</a>
+                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Язык</a>
                     <ul class="dropdown-menu">
                     <li><a id="en" class="dropdown-item" href="./edit.php?id=<?php echo $_GET['id'];?>">English</a></li>
                     <li><a id="tr" class="dropdown-item" href="./edit_tr.php?id=<?php echo $_GET['id'];?>">Türkçe</a></li>
@@ -58,7 +58,6 @@ if (isset($_POST["submit"])) {
                     </ul>
                 </li>
             </ul>
-
             <?php
                 $id = $_GET['id'];
                 $sql = "SELECT * FROM `lost_people_table` WHERE id=$id LIMIT 1";
@@ -66,46 +65,46 @@ if (isset($_POST["submit"])) {
                 if ($result) {
                     $row = mysqli_fetch_assoc($result);
                 } else {
-                    header("Location: list.php?msg=Error occured, try later");
+                    header("Location: list_ru.php?msg=Произошла ошибка, попробуйте позже");
                 }
             ?>
             <!-- Form -->
             <div class="card d-flex justify-content-center">
                 <form action="" method="post" style="min-width:300px; background-color: FDFDFD; padding: 20px;">
-                    <h4>Edit the report</h4>
+                    <h4>Обновить сведения</h4>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Full name</span>
-                        <input type="text" class="form-control" placeholder="Enter the full name of the victim" name="fullname" aria-label="fullname" aria-describedby="basic-addon1" value="<?php echo $row['name']?>">
+                        <span class="input-group-text" id="basic-addon1">Полное имя</span>
+                        <input type="text" class="form-control" placeholder="Добавьте имя жертвы" name="fullname" aria-label="fullname" aria-describedby="basic-addon1" value="<?php echo $row['name']?>">
                     </div>
                     <div class="input-group mb-3">
                         <input style="width: 50%;" type="radio" value="lost" class="btn-check" name="options" id="option1" autocomplete="off" <?php if ($row['status'] === "lost") {echo checked;}?>>
-                        <label class="btn btn-outline-danger" style="border-bottom-left-radius: 5px; border-top-left-radius: 5px; width: 50%;" for="option1">Lost</label>
+                        <label class="btn btn-outline-danger" style="border-bottom-left-radius: 5px; border-top-left-radius: 5px; width: 50%;" for="option1">Пропавший</label>
 
                         <input style="width: 50%;" type="radio" value="found" class="btn-check" name="options" id="option2" autocomplete="off" <?php if ($row['status'] === "found") {echo checked;}?>>
-                        <label class="btn btn-outline-success" style="border-bottom-right-radius: 5px; border-top-right-radius: 5px; width: 50%;" for="option2">Found</label>
+                        <label class="btn btn-outline-success" style="border-bottom-right-radius: 5px; border-top-right-radius: 5px; width: 50%;" for="option2">Найденный</label>
 
                         <p class="card-text"><small class="text-muted">
                             Chang the status if the person was found.</small>
                         </p>
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text">Contacts</span>
-                        <textarea class="form-control" name="contacts" placeholder="Enter all available victims' relatives and friends contacts" aria-label="With textarea" value="<?php echo $row['contacts']?>"></textarea>
+                        <span class="input-group-text">Контакты</span>
+                        <textarea class="form-control" name="contacts" placeholder="Добавьте контакты для обратной связи" aria-label="With textarea" value="<?php echo $row['contacts']?>"></textarea>
                     </div>
                     <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Location</span>
-                            <input type="text" class="form-control" placeholder="Enter the location where the victim lived" name="location" aria-label="location" aria-describedby="basic-addon1" value="<?php echo $row['location']?>">
+                            <span class="input-group-text" id="basic-addon1">Местоположение</span>
+                            <input type="text" class="form-control" placeholder="Добавьте местоположение жертвы" name="location" aria-label="location" aria-describedby="basic-addon1" value="<?php echo $row['location']?>">
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text">Comment</span>
-                        <textarea class="form-control" name="comment" placeholder="Leave your comment, message, optional information, age, gender, etc" aria-label="With textarea" value="<?php echo $row['comment']?>"></textarea>
+                        <span class="input-group-text">Комментарий</span>
+                        <textarea class="form-control" name="comment" placeholder="Оставьте свот комментарий: сообщение, номер телефона, возрасть дополнительные сведения, и т.д." aria-label="With textarea" value="<?php echo $row['comment']?>"></textarea>
                     </div>
                     <div class="input-group mb-3">
                         <div class="col d-flex justify-content-center">
-                            <button style="width:80%;" type="submit" class="btn btn-dark mx-auto" name="submit">Update</button>
+                            <button style="width:80%;" type="submit" class="btn btn-dark mx-auto" name="submit">Обновить</button>
                         </div>
                         <div class="col d-flex justify-content-center">
-                            <a href="./list.php" style="width:80%;" class="btn btn-dark mx-auto">Cancel</a>
+                            <a href="./list_ru.php" style="width:80%;" class="btn btn-dark mx-auto">Отменить</a>
                         </div>
                     </div>
                 </form>

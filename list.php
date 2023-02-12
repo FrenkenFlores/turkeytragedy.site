@@ -24,7 +24,6 @@ if (isset($_POST["submit"])) {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <!-- CSS -->
         <link href="./main.css" rel="stylesheet">
-        <link href="./navbar.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">
@@ -51,10 +50,10 @@ if (isset($_POST["submit"])) {
                 <li class="nav-item dropdown ms-auto">
                     <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Language</a>
                     <ul class="dropdown-menu">
-                    <li><a id="en" class="dropdown-item" href="#">English</a></li>
-                    <li><a id="tr" class="dropdown-item" href="#">Türkçe</a></li>
-                    <li><a id="ae" class="dropdown-item" href="#">العربيه</a></li>
-                    <li><a id="ru" class="dropdown-item" href="#">Русский</a></li>
+                    <li><a id="en" class="dropdown-item" href="./list.php">English</a></li>
+                    <li><a id="tr" class="dropdown-item" href="./list_tr.php">Türkçe</a></li>
+                    <li><a id="ae" class="dropdown-item" href="./list_ar.php">العربيه</a></li>
+                    <li><a id="ru" class="dropdown-item" href="./list_ru.php">Русский</a></li>
                     </ul>
                 </li>
             </ul>

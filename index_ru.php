@@ -13,21 +13,21 @@
     <body>
         <div class="container">
             <ul class="nav nav-pills bg-white" style="padding: 10px; border-radius: 4px; border-color: BFBFBF; border-width: 1px; border-style:solid; ">
-                <a class="navbar-brand" href="./index.php">
+                <a class="navbar-brand" href="./index_ru.php">
                     <img src="https://www.countryflagicons.com/FLAT/32/TR.png" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
                     <img src="https://www.countryflagicons.com/FLAT/32/SY.png" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
                 </a>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" aria-current="page" href="./reportform.php">Report</a>
+                    <a class="nav-link text-dark" aria-current="page" href="./reportform_ru.php">Добавить информацию</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="./list.php">List</a>
+                    <a class="nav-link text-dark" href="./list_ru.php">Список</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="./contacts.php">Contact us</a>
+                    <a class="nav-link text-dark" href="./contacts_ru.php">Наши контакты</a>
                 </li>
                 <li class="nav-item dropdown ms-auto">
-                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Language</a>
+                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Язык</a>
                     <ul class="dropdown-menu">
                     <li><a id="en" class="dropdown-item" href="./index.php">English</a></li>
                     <li><a id="tr" class="dropdown-item" href="./index_tr.php">Türkçe</a></li>
@@ -40,26 +40,26 @@
                 <div class="card">
                     <img src="./includes/rescueteam.jpg" class="card-img-top" alt="">
                     <div class="card-body">
-                        <h5 class="card-title">Report found or lost people</h5>
+                        <h5 class="card-title">Сообщить о пропавшем или найденном человеке</h5>
                         <p class="card-text">
-                            If you have lost the contact with a relative or a 
-                            friend that lived nearby the earthquake location
-                            or if you have found one of the earthquake victims, 
-                            feel free to leave your report.
+                            Если Вы потеряли контакт с близким, который ноходился
+                            в зоне бедствия, или нашли пострадавшего, добавьте
+                            информацию о нем в список.
                         </p>
-                        <a href="./reportform.php" class="btn btn-dark">Make a report</a>
+                        <a href="./reportform_ru.php" class="btn btn-dark">Добавить информацию</a>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./includes/list.jpg" class="card-img-top" alt="">
                     <div class="card-body">
-                        <h5 class="card-title">List</h5>
+                        <h5 class="card-title">Список</h5>
                         <p class="card-text">
-                            This is a list that contains information about the 
-                            victims of the earthquake. We will make sure that
-                            the rescue team monitor throw this list.
+                            Этот список содержить информацию о жертвах землетрясения.
+                            Мы предоставим его группе спасателей. Следите за
+                            статусом своего близкого здесь. Также вы можете редоктировать
+                            или удалять ранее добавленную запись.
                         </p>
-                        <a href="./list.php" class="btn btn-dark">Check the list</a>
+                        <a href="./list_ru.php" class="btn btn-dark">Открыть список</a>
                     </div>
                 </div>
             </div>

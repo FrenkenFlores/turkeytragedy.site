@@ -34,21 +34,21 @@ if (isset($_POST["submit"])) {
         <div class="container">
             <!-- Navigation -->
             <ul class="nav nav-pills bg-white" style="padding: 10px; border-radius: 4px; border-color: BFBFBF; border-width: 1px; border-style:solid; ">
-                <a class="navbar-brand" href="./index.php">
+                <a class="navbar-brand" href="./index_tr.php">
                     <img src="https://www.countryflagicons.com/FLAT/32/TR.png" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
                     <img src="https://www.countryflagicons.com/FLAT/32/SY.png" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
                 </a>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" aria-current="page" href="./reportform.php">Report</a>
+                    <a class="nav-link text-dark" aria-current="page" href="./reportform_tr.php">Rapor</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="./list.php">List</a>
+                    <a class="nav-link text-dark" href="./list_tr.php">Liste</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="./contacts.php">Contact us</a>
+                    <a class="nav-link text-dark" href="./contacts_tr.php">Bize ulaşın</a>
                 </li>
                 <li class="nav-item dropdown ms-auto">
-                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Language</a>
+                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dil</a>
                     <ul class="dropdown-menu">
                     <li><a id="en" class="dropdown-item" href="./reportform.php">English</a></li>
                     <li><a id="tr" class="dropdown-item" href="./reportform_tr.php">Türkçe</a></li>
@@ -60,38 +60,33 @@ if (isset($_POST["submit"])) {
             <!-- Form -->
             <div class="card d-flex justify-content-center">
                 <form action="" method="post" style="min-width:300px; background-color: FDFDFD; padding: 20px;">
-                    <h4>Make a new report</h4>
-                    <p class="card-text"><small class="text-muted">Provide any information you have.</small></p>
+                    <h4>Yeni bir rapor oluşturun</h4>
+                    <p class="card-text"><small class="text-muted">Sahip olduğunuz her türlü bilgiyi sağlayın.</small></p>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Full name</span>
-                        <input type="text" class="form-control" placeholder="Enter the full name of the victim" name="fullname" aria-label="fullname" aria-describedby="basic-addon1">
+                        <span class="input-group-text" id="basic-addon1">Tam adınız</span>
+                        <input type="text" class="form-control" placeholder="Mağdurun tam adını girin" name="fullname" aria-label="fullname" aria-describedby="basic-addon1">
                     </div>
                     <div class="input-group mb-3">
                         <input style="width: 50%;" type="radio" value="lost" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-outline-danger" style="border-bottom-left-radius: 5px; border-top-left-radius: 5px; width: 50%;" for="option1">Lost</label>
+                        <label class="btn btn-outline-danger" style="border-bottom-left-radius: 5px; border-top-left-radius: 5px; width: 50%;" for="option1">Kayıp</label>
 
                         <input style="width: 50%;" type="radio" value="found" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-outline-success" style="border-bottom-right-radius: 5px; border-top-right-radius: 5px; width: 50%;" for="option2">Found</label>
-
-                        <p class="card-text"><small class="text-muted">
-                            If a person was already added to the list before, you can change the status of that person
-                            by creating a new report with the same name and a different status.</small>
-                        </p>
+                        <label class="btn btn-outline-success" style="border-bottom-right-radius: 5px; border-top-right-radius: 5px; width: 50%;" for="option2">Bulundu</label>
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text">Contacts</span>
-                        <textarea class="form-control" name="contacts" placeholder="Enter all available victims' relatives and friends contacts" aria-label="With textarea"></textarea>
+                        <span class="input-group-text">İletişim</span>
+                        <textarea class="form-control" name="contacts" placeholder="Mevcut tüm kurban kişilerini girin" aria-label="With textarea"></textarea>
                     </div>
                     <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Location</span>
-                            <input type="text" class="form-control" placeholder="Enter the location where the victim lived" name="location" aria-label="location" aria-describedby="basic-addon1">
+                            <span class="input-group-text" id="basic-addon1">Konum</span>
+                            <input type="text" class="form-control" placeholder="Mağdurun yaşadığı yeri girin" name="location" aria-label="location" aria-describedby="basic-addon1">
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text">Comment</span>
-                        <textarea class="form-control" name="comment" placeholder="Leave your comment, message, optional information, age, gender, etc" aria-label="With textarea"></textarea>
+                        <span class="input-group-text">Yorum</span>
+                        <textarea class="form-control" name="comment" placeholder="Yorumunuzu, mesajınızı, isteğe bağlı bilgilerinizi, yaşınızı, cinsiyetinizi vb. bırakın" aria-label="With textarea"></textarea>
                     </div>
                     <div class="input-group mb-3">
-                        <button style="width:40%;" type="submit" class="btn btn-dark mx-auto" name="submit">Submit</button>
+                        <button style="width:40%;" type="submit" class="btn btn-dark mx-auto" name="submit">Gönder</button>
                     </div>
                 </form>
             </div>

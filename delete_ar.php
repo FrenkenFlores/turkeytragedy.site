@@ -6,9 +6,9 @@ if (isset($_POST["submit"])) {
     $sql = "DELETE FROM `lost_people_table` WHERE id = $id";
     $result = mysqli_query($conn, $sql);
     if ($result) {
-        header("Location: list.php?msg=Your report has been updated successfully");
+        header("Location: list_ar.php?msg=تم تحديث تقريرك بنجاح");
     } else {
-        header("Location: list.php?msg=Error occured, try later");
+        header("Location: list_ar.php?msg=خطأ، حاول لاحقًا");
     }
 }
 ?>
@@ -29,30 +29,29 @@ if (isset($_POST["submit"])) {
         <div class="container">
             <!-- Navigation -->
             <ul class="nav nav-pills bg-white" style="padding: 10px; border-radius: 4px; border-color: BFBFBF; border-width: 1px; border-style:solid; ">
-                <a class="navbar-brand" href="./index.php">
+                <a class="navbar-brand" href="./index_ar.php">
                     <img src="https://www.countryflagicons.com/FLAT/32/TR.png" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
                     <img src="https://www.countryflagicons.com/FLAT/32/SY.png" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
                 </a>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" aria-current="page" href="./reportform.php">Report</a>
+                    <a class="nav-link text-dark" aria-current="page" href="./reportform_ar.php">الإبلاغ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="./list.php">List</a>
+                    <a class="nav-link text-dark" href="./list_ar.php">القائمة</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="./contacts.php">Contact us</a>
+                    <a class="nav-link text-dark" href="./contacts_ar.php">تواصل معنا</a>
                 </li>
                 <li class="nav-item dropdown ms-auto">
-                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Language</a>
+                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">الغه</a>
                     <ul class="dropdown-menu">
-                    <li><a id="en" class="dropdown-item" href="./delete.php?id=<?php echo $_GET['id'];?>">English</a></li>
-                    <li><a id="tr" class="dropdown-item" href="./delete_tr.php?id=<?php echo $_GET['id'];?>">Türkçe</a></li>
-                    <li><a id="ae" class="dropdown-item" href="./delete_ar.php?id=<?php echo $_GET['id'];?>">العربيه</a></li>
-                    <li><a id="ru" class="dropdown-item" href="./delete_ru.php?id=<?php echo $_GET['id'];?>">Русский</a></li>
+                    <li><a id="en" class="dropdown-item" href="./edit.php?id=<?php echo $_GET['id'];?>">English</a></li>
+                    <li><a id="tr" class="dropdown-item" href="./edit_tr.php?id=<?php echo $_GET['id'];?>">Türkçe</a></li>
+                    <li><a id="ae" class="dropdown-item" href="./edit_ar.php?id=<?php echo $_GET['id'];?>">العربيه</a></li>
+                    <li><a id="ru" class="dropdown-item" href="./edit_ru.php?id=<?php echo $_GET['id'];?>">Русский</a></li>
                     </ul>
                 </li>
             </ul>
-
             <?php
                 $id = $_GET['id'];
                 $sql = "SELECT * FROM `lost_people_table` WHERE id=$id LIMIT 1";
@@ -60,7 +59,7 @@ if (isset($_POST["submit"])) {
                 if ($result) {
                     $row = mysqli_fetch_assoc($result);
                 } else {
-                    header("Location: list.php?msg=Error occured, try later");
+                    header("Location: list_ar.php?msg=خطأ، حاول لاحقًا");
                 }
             ?>
             <!-- Form -->
@@ -68,16 +67,16 @@ if (isset($_POST["submit"])) {
                 <form action="" method="post" style="min-width:300px; background-color: FDFDFD; padding: 20px;">
                     <h4>Delete the report</h4>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Full name</span>
-                        <input type="text" readonly class="form-control" placeholder="Full name" name="fullname" aria-label="fullname" aria-describedby="basic-addon1" value="<?php echo $row['name']?>">
+                        <span class="input-group-text" id="basic-addon1">الاسم الكامل</span>
+                        <input type="text" readonly class="form-control" placeholder="" name="fullname" aria-label="fullname" aria-describedby="basic-addon1" value="<?php echo $row['name']?>">
                     </div>
                     
                     <div class="input-group mb-3">
                         <div class="col d-flex justify-content-center">
-                            <button style="width:80%;" type="submit" class="btn btn-dark mx-auto" name="submit">Delete</button>
+                            <button style="width:80%;" type="submit" class="btn btn-dark mx-auto" name="submit">مسح</button>
                         </div>
                         <div class="col d-flex justify-content-center">
-                            <a href="./list.php" style="width:80%;" class="btn btn-dark mx-auto">Cancel</a>
+                            <a href="./list_ar.php" style="width:80%;" class="btn btn-dark mx-auto">الغاء</a>
                         </div>
                     </div>
                 </form>
